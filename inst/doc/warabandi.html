@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>warabandi</title>
+
+<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+<link href="data:text/css,%2Etabwid%20table%7B%0Aborder%2Dcollapse%3Acollapse%3B%0Aline%2Dheight%3A1%3B%0Amargin%2Dleft%3Aauto%3B%0Amargin%2Dright%3Aauto%3B%0Aborder%2Dwidth%3A%200%3B%0Adisplay%3A%20table%3B%0Amargin%2Dtop%3A%201%2E275em%3B%0Amargin%2Dbottom%3A%201%2E275em%3B%0Aborder%2Dspacing%3A%200%3B%0Aborder%2Dcolor%3A%20transparent%3B%0A%7D%0A%2Etabwid%5Fleft%20table%7B%0Amargin%2Dleft%3A0%3B%0A%7D%0A%2Etabwid%5Fright%20table%7B%0Amargin%2Dright%3A0%3B%0A%7D%0A%2Etabwid%20td%20%7B%0Apadding%3A%200%3B%0A%7D%0A%2Etabwid%20a%20%7B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0A%2Etabwid%20thead%20%7B%0Abackground%2Dcolor%3A%20transparent%3B%0A%7D%0A%2Etabwid%20tfoot%20%7B%0Abackground%2Dcolor%3A%20transparent%3B%0A%7D%0A%2Etabwid%20table%20tr%20%7B%0Abackground%2Dcolor%3A%20transparent%3B%0A%7D%0A" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">warabandi</h1>
+
+
+
+<div id="warabandi-or-roster-of-turn" class="section level1">
+<h1>Warabandi or Roster of Turn</h1>
+<p><strong>Introduction:</strong> This function will generate roster for a week (168 hrs. or 24X7). Flow time of a watercourse to an individual farmer calculate based on their holding area (bigga or hectares), This flow time roster generated by this function known as “warabandi” in canal irrigated agricultural areas (Punjab, Rajasthan, Haryana and Some areas of Pakistan)</p>
+</div>
+<div id="load-package" class="section level1">
+<h1>Load Package</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(warabandi)</span></code></pre></div>
+<div id="data-structure-of-input-data" class="section level2">
+<h2>data structure of input data</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(warabandi_data)</span></code></pre></div>
+<pre><code>##       Name_of_Farmer Nkka.No.   x1 MuNo   x2 MuNo.1   x3 MuNo.2   x4 MuNo.3  x5
+## 1        Kahan Singh        5  4.5    5  2.0      1  5.0     13 12.5     23  NA
+## 2 Harvinderpal Singh        5  4.5    5 24.5     14 12.0     57   NA         NA
+## 3      Jasvant Singh        5  5.3    5  9.7     26  8.5     55   NA         NA
+## 4     Mukhtyar Singh        5  7.8    5 11.5      6  9.8     10 24.5     27 9.8
+## 5              Diggi       NA   NA        NA          NA          NA         NA
+## 6       Pooran Singh        6 11.5    6   NA          NA          NA         NA
+##   MuNo.4 x6 MuNo.5  x7 MuNo.6 Bharai Katai
+## 1     NA NA     NA  NA          0:00  0:00
+## 2     NA NA     NA  NA          0:00  0:00
+## 3     NA NA     NA  NA          0:00  0:04
+## 4     26 10     55 0.5     44   0:00  0:00
+## 5     NA NA     NA  NA          0:12  0:00
+## 6     NA NA     NA  NA          0:15  0:00</code></pre>
+<p>#Calulation of roster Here we are not writing output to reduce vignettes and space</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span><span class="fu">warabandi</span>(<span class="at">file =</span> warabandi_data, <span class="at">output =</span> <span class="cn">FALSE</span>, <span class="at">nof =</span> <span class="st">&quot;my_file.csv&quot;</span>)</span></code></pre></div>
+<pre><code>##                               Name Nakka
+## 1                      Kahan Singh     5
+## 2               Harvinderpal Singh     5
+## 3                    Jasvant Singh     5
+## 4                   Mukhtyar Singh     5
+## 5                            Diggi    NA
+## 6                     Pooran Singh     6
+## 7                     Nirmal Singh     9
+## 8                     Jagtar Singh     4
+## 9     Harbhinder singh/Rulda Singh     3
+## 10                  Chamkaur Singh     3
+## 11                    Preetam Sing    11
+## 12                    Ikbaal Singh    22
+## 13                           Diggi    NA
+## 14                  Gurpreet Singh    23
+## 15                  Chamkaur Singh    12
+## 16                           Diggi    NA
+## 17                           Diggi    NA
+## 18                    Jagtar Singh    12
+## 19                    Jagtar Singh    12
+## 20                    Jagtar Singh    21
+## 21                  Chamkaur Singh    21
+## 22                 Hargovind Singh    21
+## 23                 Hargovind Singh    21
+## 24                           Diggi    NA
+## 25                 Hargovind Singh    24
+## 26                      Mewa Singh    33
+## 27                     Kapal Singh    33
+## 28                 Gurbachan Singh    33
+## 29                 Harbhajan Singh    13
+## 30                  Surendra Singh    19
+## 31              Harvinderpal Singh    26
+## 32                           Diggi    NA
+## 33                  Hoshiyar Singh    32
+## 34                 Kulvinder Singh    31
+## 35                  Shri Gurudwara    31
+## 36                  Saudagar Singh    31
+## 37                  Saudagar Singh    34
+## 38                  Sukhwant Singh    35
+## 39                 Harbhajan Singh    40
+## 40                 Baljinder Singh    42
+## 41                 Baljinder Singh    43
+## 42                    Ikbaal Singh    52
+## 43                    Abaadi Diggi    39
+## 44                  Hoshiyar Singh    44
+## 45                  Mukhtyar Singh    44
+## 46                       budhraam     51
+## 47                      Bant Singh    51
+## 48            Tej Singh, Gej Singh    55
+## 49                    Ikbaal Singh    56
+## 50                  Saudagar Singh    48
+## 51                   Preetam Singh    48
+## 52                         Unknown    NA
+## 53                     Rulda Singh    57
+## 54 Harbhinderpal Singh/Rulda Singh    47
+## 55                     Rulda Singh    15
+## 56                     Rulda Singh    18
+## 57                   Gurjeet Singh    16
+## 58                    Jagdev Singh    17
+## 59                           Abadi    NA
+##                                                                     Drkva
+## 1                  4.5, 2, 5, 12.5, 0, 0, 0 \n MNo 5, 1, 13, 23,  0,  0, 
+## 2                  4.5, 24.5, 12, 0, 0, 0, 0 \n MNo 5, 14, 57, ,  0,  0, 
+## 3                  5.3, 9.7, 8.5, 0, 0, 0, 0 \n MNo 5, 26, 55, ,  0,  0, 
+## 4      7.8, 11.5, 9.8, 24.5, 9.8, 10, 0.5 \n MNo 5, 6, 10, 27, 26, 55, 44
+## 5                             0, 0, 0, 0, 0, 0, 0 \n MNo , , , ,  0,  0, 
+## 6                         11.5, 0, 0, 0, 0, 0, 0 \n MNo 6, , , ,  0,  0, 
+## 7          25, 4.8, 24.5, 7.35, 6, 2.95, 0 \n MNo 9, 10, 28, 29, 47, 16, 
+## 8                        3.5, 0, 0, 0, 0, 0, 0 \n MNo 3TW, , , ,  0,  0, 
+## 9                       1.05, 0, 0, 0, 0, 0, 0 \n MNo 3TW, , , ,  0,  0, 
+## 10                       3.5, 0, 0, 0, 0, 0, 0 \n MNo 3TW, , , ,  0,  0, 
+## 11                25, 12, 7, 0.6, 0, 0, 0 \n MNo 11, 4, 56, 4TW,  0,  0, 
+## 12                      24, 20, 0, 0, 0, 0, 0 \n MNo 22, 52, , ,  0,  0, 
+## 13                            0, 0, 0, 0, 0, 0, 0 \n MNo , , , ,  0,  0, 
+## 14      12.5, 10, 14.25, 10.35, 1, 1.6, 0 \n MNo 23, 10, 20, 53, 31, 35, 
+## 15                10.5, 2.9, 1.1, 0, 0, 0, 0 \n MNo 12, 3, 21, ,  0,  0, 
+## 16                            0, 0, 0, 0, 0, 0, 0 \n MNo , , , ,  0,  0, 
+## 17                            0, 0, 0, 0, 0, 0, 0 \n MNo , , , ,  0,  0, 
+## 18                     9.6, 5.3, 0, 0, 0, 0, 0 \n MNo 12, 4, , ,  0,  0, 
+## 19                    15.6, 0, 0, 0, 0, 0, 0 \n MNo 12BAG, , , ,  0,  0, 
+## 20                    15.6, 0, 0, 0, 0, 0, 0 \n MNo 21BAG, , , ,  0,  0, 
+## 21                    30.4, 0, 0, 0, 0, 0, 0 \n MNo 21BAG, , , ,  0,  0, 
+## 22                    30.4, 0, 0, 0, 0, 0, 0 \n MNo 21BAG, , , ,  0,  0, 
+## 23                   3.2, 2, 0.5, 0, 0, 0, 0 \n MNo 21, 3, 30, ,  0,  0, 
+## 24                            0, 0, 0, 0, 0, 0, 0 \n MNo , , , ,  0,  0, 
+## 25                       19.6, 0, 0, 0, 0, 0, 0 \n MNo 24, , , ,  0,  0, 
+## 26                      5, 4.9, 0, 0, 0, 0, 0 \n MNo 33, 24, , ,  0,  0, 
+## 27                         10, 0, 0, 0, 0, 0, 0 \n MNo 33, , , ,  0,  0, 
+## 28                         10, 0, 0, 0, 0, 0, 0 \n MNo 33, , , ,  0,  0, 
+## 29              20, 12.5, 16.15, 0, 0, 0, 0 \n MNo 13, 25, 30, ,  0,  0, 
+## 30              24, 11.3, 12, 15, 0, 0, 0 \n MNo 19, 40, 56, 54,  0,  0, 
+## 31                          5, 0, 0, 0, 0, 0, 0 \n MNo 26, , , ,  0,  0, 
+## 32                            0, 0, 0, 0, 0, 0, 0 \n MNo , , , ,  0,  0, 
+## 33     25, 12.5, 5, 4.4, 7.2, 6.55, 0.5 \n MNo 32, 25, 48, 35, 40, 43, 44
+## 34  13.7, 0.6, 7.85, 14.9, 0.25, 0, 8.4 \n MNo 31, 35, 30, 42, 43,  0, 53
+## 35                        4.8, 0, 0, 0, 0, 0, 0 \n MNo 31, , , ,  0,  0, 
+## 36            9.8, 6, 1.6, 10.25, 0, 0, 0 \n MNo 31, 41, 35, 20,  0,  0, 
+## 37               17, 6.25, 10, 6, 0, 0, 0 \n MNo 34, 53, 54, 47,  0,  0, 
+## 38                 15.6, 9.8, 2, 0, 0, 0, 0 \n MNo 35, 43, 51, ,  0,  0, 
+## 39                          5, 0, 0, 0, 0, 0, 0 \n MNo 40, , , ,  0,  0, 
+## 40                    5.1, 6.5, 0, 0, 0, 0, 0 \n MNo 42, 41, , ,  0,  0, 
+## 41                    8.1, 7.5, 0, 0, 0, 0, 0 \n MNo 43, 34, , ,  0,  0, 
+## 42                          5, 0, 0, 0, 0, 0, 0 \n MNo 52, , , ,  0,  0, 
+## 43                            0, 0, 0, 0, 0, 0, 0 \n MNo , , , ,  0,  0, 
+## 44                        4.5, 0, 0, 0, 0, 0, 0 \n MNo 44, , , ,  0,  0, 
+## 45                        4.5, 0, 0, 0, 0, 0, 0 \n MNo 44, , , ,  0,  0, 
+## 46                   2.9, 0.35, 0, 0, 0, 0, 0 \n MNo 51, 44, , ,  0,  0, 
+## 47                   6.7, 5.75, 0, 0, 0, 0, 0 \n MNo 51, 49, , ,  0,  0, 
+## 48                          6, 0, 0, 0, 0, 0, 0 \n MNo 55, , , ,  0,  0, 
+## 49                          5, 0, 0, 0, 0, 0, 0 \n MNo 56, , , ,  0,  0, 
+## 50                       19.5, 0, 0, 0, 0, 0, 0 \n MNo 48, , , ,  0,  0, 
+## 51           5, 2.4, 0.8, 2.4, 0.85, 0, 0 \n MNo 48, 51, 44, 51, 44,  0, 
+## 52                            0, 0, 0, 0, 0, 0, 0 \n MNo , , , ,  0,  0, 
+## 53                         13, 0, 0, 0, 0, 0, 0 \n MNo 57, , , ,  0,  0, 
+## 54                         19, 0, 0, 0, 0, 0, 0 \n MNo 47, , , ,  0,  0, 
+## 55                   14.5, 7, 0, 0, 0, 0, 0 \n MNo 15, 15TW, , ,  0,  0, 
+## 56 24, 1.1, 17.15, 10, 7.25, 1.05, 2.9 \n MNo 18, 16, 29, 2,  3, 16, 16TW
+## 57              1.5, 2.8, 7.5, 0, 0, 0, 0 \n MNo 16, 51, 16TW, ,  0,  0, 
+## 58              24.5, 6, 12.5, 7, 5, 0, 0 \n MNo 17, 16, 41, 50, 50,  0, 
+## 59                            0, 0, 0, 0, 0, 0, 0 \n MNo , , , ,  0,  0, 
+##    RakvaSum TotalTurn Bharai Jharai                     Time_schedule
+## 1     24.00      3:13   0:00   0:00        Monday, 18:0-Monday, 21:13
+## 2     41.00      5:31   0:00   0:00       Monday, 21:13-Tuesday, 2:44
+## 3     23.50       3:5   0:00   0:04       Tuesday, 2:44-Tuesday, 5:50
+## 4     73.90      9:56   0:00   0:00      Tuesday, 5:50-Tuesday, 15:47
+## 5      0.00      0:12   0:12   0:00     Tuesday, 15:47-Tuesday, 15:59
+## 6     11.50      1:47   0:15   0:00     Tuesday, 15:59-Tuesday, 17:47
+## 7     70.60      9:30   0:10   0:10    Tuesday, 17:47-Wednesday, 3:17
+## 8      3.50      0:28   0:00   0:00   Wednesday, 3:17-Wednesday, 3:45
+## 9      1.05      0:23   0:15   0:00    Wednesday, 3:45-Wednesday, 4:9
+## 10     3.50      0:28   0:00   0:00    Wednesday, 4:9-Wednesday, 4:37
+## 11    44.60      6:15   0:15   0:00  Wednesday, 4:37-Wednesday, 10:52
+## 12    44.00      6:10   0:15   0:00  Wednesday, 10:52-Wednesday, 17:2
+## 13     0.00      0:12   0:12   0:00  Wednesday, 17:2-Wednesday, 17:14
+## 14    49.70      6:41   0:15   0:15 Wednesday, 17:14-Wednesday, 23:56
+## 15    14.50      2:21   0:24   0:00   Wednesday, 23:56-Thursday, 2:17
+## 16     0.00       0:4   0:04   0:00     Thursday, 2:17-Thursday, 2:21
+## 17     0.00       0:4   0:04   0:00     Thursday, 2:21-Thursday, 2:25
+## 18    14.90       2:0   0:00   0:00     Thursday, 2:25-Thursday, 4:25
+## 19    15.60       2:5   0:00   0:00     Thursday, 4:25-Thursday, 6:31
+## 20    15.60      2:20   0:15   0:00     Thursday, 6:31-Thursday, 8:52
+## 21    30.40       4:5   0:00   0:00    Thursday, 8:52-Thursday, 12:57
+## 22    30.40       4:5   0:00   0:00    Thursday, 12:57-Thursday, 17:3
+## 23     5.70      0:46   0:00   0:00    Thursday, 17:3-Thursday, 17:49
+## 24     0.00       0:5   0:05   0:00   Thursday, 17:49-Thursday, 17:54
+## 25    19.60      2:53   0:15   0:00   Thursday, 17:54-Thursday, 20:47
+## 26     9.90      1:34   0:15   0:00   Thursday, 20:47-Thursday, 22:22
+## 27    10.00      1:20   0:00   0:00   Thursday, 22:22-Thursday, 23:43
+## 28    10.00       1:2   0:00   0:18      Thursday, 23:43-Friday, 0:46
+## 29    48.65      6:44   0:12   0:00         Friday, 0:46-Friday, 7:31
+## 30    62.30      8:33   0:10   0:00         Friday, 7:31-Friday, 16:4
+## 31     5.00      0:50   0:10   0:00        Friday, 16:4-Friday, 16:54
+## 32     0.00      0:12   0:12   0:00        Friday, 16:54-Friday, 17:6
+## 33    61.15      8:23   0:10   0:00       Friday, 17:6-Saturday, 1:30
+## 34    45.70       6:9   0:00   0:00     Saturday, 1:30-Saturday, 7:39
+## 35     4.80      0:38   0:00   0:00     Saturday, 7:39-Saturday, 8:18
+## 36    27.65      3:43   0:00   0:00     Saturday, 8:18-Saturday, 12:1
+## 37    39.25      5:26   0:10   0:00    Saturday, 12:1-Saturday, 17:28
+## 38    27.40      3:41   0:00   0:00    Saturday, 17:28-Saturday, 21:9
+## 39     5.00      0:50   0:10   0:00    Saturday, 21:9-Saturday, 21:59
+## 40    11.60      1:43   0:10   0:00   Saturday, 21:59-Saturday, 23:43
+## 41    15.60       2:5   0:00   0:00      Saturday, 23:43-Sunday, 1:49
+## 42     5.00      0:45   0:15   0:10         Sunday, 1:49-Sunday, 2:34
+## 43     0.00      2:40   2:40   0:00         Sunday, 2:34-Sunday, 5:14
+## 44     4.50      0:51   0:15   0:00          Sunday, 5:14-Sunday, 6:6
+## 45     4.50      0:36   0:00   0:00          Sunday, 6:6-Sunday, 6:42
+## 46     3.25      0:51   0:25   0:00         Sunday, 6:42-Sunday, 7:33
+## 47    12.45      1:40   0:00   0:00         Sunday, 7:33-Sunday, 9:14
+## 48     6.00       1:7   0:19   0:00        Sunday, 9:14-Sunday, 10:21
+## 49     5.00      0:50   0:10   0:00       Sunday, 10:21-Sunday, 11:12
+## 50    19.50      2:37   0:00   0:00       Sunday, 11:12-Sunday, 13:49
+## 51    11.45      1:32   0:00   0:00       Sunday, 13:49-Sunday, 15:22
+## 52     0.00       0:0   0:00   0:00       Sunday, 15:22-Sunday, 15:22
+## 53    13.00      0:53   0:10   1:01       Sunday, 15:22-Sunday, 16:16
+## 54    19.00      2:33   0:00   0:00       Sunday, 16:16-Sunday, 18:49
+## 55    21.50       3:8   0:15   0:00       Sunday, 18:49-Sunday, 21:58
+## 56    63.45      8:48   0:16   0:00        Sunday, 21:58-Monday, 6:46
+## 57    11.80      1:35   0:00   0:00         Monday, 6:46-Monday, 8:21
+## 58    55.00      7:28   0:04   0:00        Monday, 8:21-Monday, 15:50
+## 59     0.00      2:10   2:55   0:45        Monday, 15:50-Monday, 18:0</code></pre>
+<p>#Lets take a look at output Output generated by package is a list of different objects. 1. Flow time per unit area in minutes 2. Rakva or total area under command subject to be irrigated 3. Bharai or fillig time; as a compensation 4. Jharai or empty time 5. Weekdays or total duration has to be divided 6. Final table calculated by warabandi saved as a output file to the working directory</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>output[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 8
+## 
+## [[2]]
+## [1] 1176.95
+## 
+## [[3]]
+## [1] &quot;12H 19M 0S&quot;
+## 
+## [[4]]
+## [1] &quot;2H 43M 0S&quot;
+## 
+## [[5]]
+## [1] &quot;7d 0H 0M 0S&quot;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Report_Table<span class="ot">&lt;-</span><span class="fu">data.frame</span>(output[<span class="dv">6</span>])</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Report_Table)</span></code></pre></div>
+<pre><code>##                 Name Nakka
+## 1        Kahan Singh     5
+## 2 Harvinderpal Singh     5
+## 3      Jasvant Singh     5
+## 4     Mukhtyar Singh     5
+## 5              Diggi    NA
+## 6       Pooran Singh     6
+##                                                                Drkva RakvaSum
+## 1             4.5, 2, 5, 12.5, 0, 0, 0 \n MNo 5, 1, 13, 23,  0,  0,      24.0
+## 2             4.5, 24.5, 12, 0, 0, 0, 0 \n MNo 5, 14, 57, ,  0,  0,      41.0
+## 3             5.3, 9.7, 8.5, 0, 0, 0, 0 \n MNo 5, 26, 55, ,  0,  0,      23.5
+## 4 7.8, 11.5, 9.8, 24.5, 9.8, 10, 0.5 \n MNo 5, 6, 10, 27, 26, 55, 44     73.9
+## 5                        0, 0, 0, 0, 0, 0, 0 \n MNo , , , ,  0,  0,       0.0
+## 6                    11.5, 0, 0, 0, 0, 0, 0 \n MNo 6, , , ,  0,  0,      11.5
+##   TotalTurn Bharai Jharai                 Time_schedule
+## 1      3:13   0:00   0:00    Monday, 18:0-Monday, 21:13
+## 2      5:31   0:00   0:00   Monday, 21:13-Tuesday, 2:44
+## 3       3:5   0:00   0:04   Tuesday, 2:44-Tuesday, 5:50
+## 4      9:56   0:00   0:00  Tuesday, 5:50-Tuesday, 15:47
+## 5      0:12   0:12   0:00 Tuesday, 15:47-Tuesday, 15:59
+## 6      1:47   0:15   0:00 Tuesday, 15:59-Tuesday, 17:47</code></pre>
+</div>
+</div>
+<div id="report-generation-of-warabandi" class="section level1">
+<h1>Report generation of warabandi</h1>
+<p>Generation of the report in printable format which can be supplied or distribut- ed among all the farmers. This step is highle depend on the external packages (knitr, flextable). Code chunk provide below is a sample which can be modified as per user need like header and fotters. Lets read output file generated by warabandi package</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data2<span class="ot">&lt;-</span>Report_Table</span></code></pre></div>
+</div>
+<div id="lets-make-table" class="section level1">
+<h1>Lets make table</h1>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>flextable<span class="sc">::</span><span class="fu">flextable</span>(<span class="fu">head</span>(data2))</span></code></pre></div>
+<template id="917e3dd6-ae7f-487b-99a4-aa09e79fb4dd"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-80b29f2a{border-collapse:collapse;}.cl-80a8600a{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-80a8a04c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-80a8a088{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-80a95442{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-80a95488{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-80a954a6{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-80a954ba{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-80a954ce{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-80a954d8{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-80b29f2a"><thead><tr style="overflow-wrap:break-word;"><td class="cl-80a954ce"><p class="cl-80a8a04c"><span class="cl-80a8600a">Name</span></p></td><td class="cl-80a954d8"><p class="cl-80a8a088"><span class="cl-80a8600a">Nakka</span></p></td><td class="cl-80a954ce"><p class="cl-80a8a04c"><span class="cl-80a8600a">Drkva</span></p></td><td class="cl-80a954d8"><p class="cl-80a8a088"><span class="cl-80a8600a">RakvaSum</span></p></td><td class="cl-80a954ce"><p class="cl-80a8a04c"><span class="cl-80a8600a">TotalTurn</span></p></td><td class="cl-80a954ce"><p class="cl-80a8a04c"><span class="cl-80a8600a">Bharai</span></p></td><td class="cl-80a954ce"><p class="cl-80a8a04c"><span class="cl-80a8600a">Jharai</span></p></td><td class="cl-80a954ce"><p class="cl-80a8a04c"><span class="cl-80a8600a">Time_schedule</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">Kahan Singh</span></p></td><td class="cl-80a95488"><p class="cl-80a8a088"><span class="cl-80a8600a">5</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">4.5, 2, 5, 12.5, 0, 0, 0 <br> MNo 5, 1, 13, 23,  0,  0, </span></p></td><td class="cl-80a95488"><p class="cl-80a8a088"><span class="cl-80a8600a">24.0</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">3:13</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:00</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:00</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">Monday, 18:0-Monday, 21:13</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">Harvinderpal Singh</span></p></td><td class="cl-80a95488"><p class="cl-80a8a088"><span class="cl-80a8600a">5</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">4.5, 24.5, 12, 0, 0, 0, 0 <br> MNo 5, 14, 57, ,  0,  0, </span></p></td><td class="cl-80a95488"><p class="cl-80a8a088"><span class="cl-80a8600a">41.0</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">5:31</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:00</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:00</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">Monday, 21:13-Tuesday, 2:44</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">Jasvant Singh</span></p></td><td class="cl-80a95488"><p class="cl-80a8a088"><span class="cl-80a8600a">5</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">5.3, 9.7, 8.5, 0, 0, 0, 0 <br> MNo 5, 26, 55, ,  0,  0, </span></p></td><td class="cl-80a95488"><p class="cl-80a8a088"><span class="cl-80a8600a">23.5</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">3:5</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:00</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:04</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">Tuesday, 2:44-Tuesday, 5:50</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">Mukhtyar Singh</span></p></td><td class="cl-80a95488"><p class="cl-80a8a088"><span class="cl-80a8600a">5</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">7.8, 11.5, 9.8, 24.5, 9.8, 10, 0.5 <br> MNo 5, 6, 10, 27, 26, 55, 44</span></p></td><td class="cl-80a95488"><p class="cl-80a8a088"><span class="cl-80a8600a">73.9</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">9:56</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:00</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:00</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">Tuesday, 5:50-Tuesday, 15:47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">Diggi</span></p></td><td class="cl-80a95488"><p class="cl-80a8a088"><span class="cl-80a8600a"></span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0, 0, 0, 0, 0, 0, 0 <br> MNo , , , ,  0,  0, </span></p></td><td class="cl-80a95488"><p class="cl-80a8a088"><span class="cl-80a8600a">0.0</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:12</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:12</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:00</span></p></td><td class="cl-80a95442"><p class="cl-80a8a04c"><span class="cl-80a8600a">Tuesday, 15:47-Tuesday, 15:59</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-80a954a6"><p class="cl-80a8a04c"><span class="cl-80a8600a">Pooran Singh</span></p></td><td class="cl-80a954ba"><p class="cl-80a8a088"><span class="cl-80a8600a">6</span></p></td><td class="cl-80a954a6"><p class="cl-80a8a04c"><span class="cl-80a8600a">11.5, 0, 0, 0, 0, 0, 0 <br> MNo 6, , , ,  0,  0, </span></p></td><td class="cl-80a954ba"><p class="cl-80a8a088"><span class="cl-80a8600a">11.5</span></p></td><td class="cl-80a954a6"><p class="cl-80a8a04c"><span class="cl-80a8600a">1:47</span></p></td><td class="cl-80a954a6"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:15</span></p></td><td class="cl-80a954a6"><p class="cl-80a8a04c"><span class="cl-80a8600a">0:00</span></p></td><td class="cl-80a954a6"><p class="cl-80a8a04c"><span class="cl-80a8600a">Tuesday, 15:59-Tuesday, 17:47</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="ef295c10-fc19-4486-9c9d-450112428e5c"></div>
+<script>
+var dest = document.getElementById("ef295c10-fc19-4486-9c9d-450112428e5c");
+var template = document.getElementById("917e3dd6-ae7f-487b-99a4-aa09e79fb4dd");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+</div>
+<div id="lets-generate-report-for-individual-farmer" class="section level1">
+<h1>Lets generate report for individual farmer</h1>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">head</span>(data2))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">by</span>(data3, <span class="fu">seq_len</span>(<span class="fu">nrow</span>((data3))), <span class="cf">function</span>(row) {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  chak<span class="ot">&lt;-</span><span class="st">&quot;Chak-38 R.B&quot;</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>distributries<span class="ot">&lt;-</span> <span class="st">&quot;R.B II&quot;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>dateOI<span class="ot">&lt;-</span><span class="fu">date</span>()</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>dateOd<span class="ot">&lt;-</span><span class="st">&quot;Date of distribution __/__/____&quot;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>note1<span class="ot">&lt;-</span><span class="st">&quot;Note: All schedules issued before this, are cancelled&quot;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>Year_o_Valid<span class="ot">&lt;-</span><span class="st">&quot;Year: April 2019 to 2025&quot;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>Issue<span class="ot">&lt;-</span><span class="st">&quot;Issue Serial No:________/___&quot;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>Jal_upbhokta<span class="ot">&lt;-</span><span class="st">&quot;Jal Upbhokta Sangam:&quot;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>d5 <span class="ot">&lt;-</span>flextable<span class="sc">::</span><span class="fu">fit_to_width</span>(flextable<span class="sc">::</span><span class="fu">flextable</span>(row), <span class="at">max_width =</span> <span class="dv">7</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">inc=</span>1L, <span class="at">max_iter =</span> <span class="dv">20</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>d5 <span class="ot">&lt;-</span> flextable<span class="sc">::</span><span class="fu">add_header_lines</span>(d5, <span class="fu">c</span>(<span class="fu">paste</span>(Year_o_Valid,<span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>,<span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, chak), <span class="fu">paste</span>(Jal_upbhokta,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>                                                                                   distributries, <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>,<span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, Issue, <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>,<span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>,<span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>,<span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>,  dateOI)))</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>d5 <span class="ot">&lt;-</span>flextable<span class="sc">::</span><span class="fu">add_footer_lines</span>(d5, </span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">c</span>(<span class="fu">paste</span>(dateOd, <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, note1), </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">paste</span>(<span class="st">&quot;President&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, </span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>                                         Jal_upbhokta, distributries)))</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a> <span class="co">#flextable::flextable_to_rmd(d5)</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a> }))</span></code></pre></div>
+</div>
+<div id="lets-take-a-look-at-report-for-individual-farmer" class="section level1">
+<h1>Lets take a look at report for individual farmer</h1>
+<p><img src="data:image/png;base64,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" /></p>
+</div>
+<div id="contact-us" class="section level1">
+<h1>Contact us</h1>
+<p>That’s all! Thanks for being here. Let me know if you heve any doubt about this package or issue Harvinder Singh Department of pharmacology PGIMER, Chandigarh (160012) <a href="mailto:harvindermaan4@gmail.com" class="email">harvindermaan4@gmail.com</a> ORCID <a href="https://orcid.org/0000-0002-6349-3143" class="uri">https://orcid.org/0000-0002-6349-3143</a></p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+f6a5df3efd9e6f2c2c324f48f05f2ef0 *DESCRIPTION
+8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
+af0367b6dfae476f50dfe4d39afc2be6 *R/finalReport.R
+45c46dd87389321a0fb5d51335c332f5 *R/warabandi.R
+08aa0aede4eed2c2ba159b5bf0b07dab *R/warabandi_data.R
+57648b62fa6dd542800e29979e280f60 *build/vignette.rds
+83328baffe43cc431c30b16daba2f45c *data/finalReport.rda
+16f7d57db00d4a32e1c07ac09aa9d25e *data/warabandi_data.rda
+1aee2065acfc922edbe49c0c5b73b269 *inst/doc/warabandi.R
+6d2e86196013df5b2a1160048563eed4 *inst/doc/warabandi.Rmd
+5fa6f492bcb34dd124d34d2b8bbe209a *inst/doc/warabandi.html
+9d026cb9eda781d7487864de37fdc1ea *man/finalReport.Rd
+ecd6476f8ae6d7b4d47fc27a6f5ab772 *man/warabandi.Rd
+293706a318d60532feccde3a04c5ce76 *man/warabandi_data.Rd
+a37ef152814e158d069b05cf7b4e9c26 *vignettes/TableIndividual.png
+6d2e86196013df5b2a1160048563eed4 *vignettes/warabandi.Rmd
